@@ -1,0 +1,15 @@
+mixin SurfaceData
+{
+	code
+	{
+		struct SurfaceData
+		{
+			float4 albedo;
+			float4 worldNormal;
+			float depth;
+			float roughness;
+			float metalness;
+			uint mask;
+		};
+	};
+};
