@@ -71,7 +71,7 @@ if(WIN32)
 endif()
 
 ## Check data dependencies
-check_and_update_builtin_assets(bsf ${BSF_SOURCE_DIR}/../Data/Raw Raw ${BS_FRAMEWORK_BUILTIN_ASSETS_VERSION} NO)
+#check_and_update_builtin_assets(bsf ${BSF_SOURCE_DIR}/../Data/Raw Raw ${BS_FRAMEWORK_BUILTIN_ASSETS_VERSION} NO)
 
 # Config file
 ## Note: Must happen before script binding generation
@@ -85,9 +85,9 @@ else()
 endif()
 
 if(AUDIO_MODULE MATCHES "FMOD")
-	set(AUDIO_MODULE_LIB bsfFMOD)
+	#set(AUDIO_MODULE_LIB bsfFMOD)
 else() # Default to OpenAudio
-	set(AUDIO_MODULE_LIB bsfOpenAudio)
+	#set(AUDIO_MODULE_LIB bsfOpenAudio)
 endif()
 
 set(RENDERER_MODULE_LIB bsfRenderBeast)
@@ -108,11 +108,11 @@ add_subdirectory(Foundation)
 ## Plugins
 ### If using MSVC include all plugins in the solution (which ones actually build is controlled by dependencies)
 if(INCLUDE_ALL_IN_WORKFLOW AND MSVC)
-	add_subdirectory(Plugins/bsfD3D11RenderAPI)
-	add_subdirectory(Plugins/bsfGLRenderAPI)
-	add_subdirectory(Plugins/bsfVulkanRenderAPI)
-	add_subdirectory(Plugins/bsfFMOD)
-	add_subdirectory(Plugins/bsfOpenAudio)
+	#add_subdirectory(Plugins/bsfD3D11RenderAPI)
+	#add_subdirectory(Plugins/bsfGLRenderAPI)
+	#add_subdirectory(Plugins/bsfVulkanRenderAPI)
+	#add_subdirectory(Plugins/bsfFMOD)
+	#add_subdirectory(Plugins/bsfOpenAudio)
 else() # Otherwise include only chosen ones
 	if(RENDER_API_MODULE MATCHES "DirectX 11")
 		add_subdirectory(Plugins/bsfD3D11RenderAPI)
@@ -123,18 +123,18 @@ else() # Otherwise include only chosen ones
 	endif()
 
 	if(AUDIO_MODULE MATCHES "FMOD")
-		add_subdirectory(Plugins/bsfFMOD)
+		#add_subdirectory(Plugins/bsfFMOD)
 	else() # Default to OpenAudio
-		add_subdirectory(Plugins/bsfOpenAudio)
+		#add_subdirectory(Plugins/bsfOpenAudio)
 	endif()
 endif()
 
-add_subdirectory(Plugins/bsfRenderBeast)
-add_subdirectory(Plugins/bsfPhysX)
-add_subdirectory(Plugins/bsfFBXImporter)
-add_subdirectory(Plugins/bsfFontImporter)
-add_subdirectory(Plugins/bsfFreeImgImporter)
-add_subdirectory(Plugins/bsfSL)
+#add_subdirectory(Plugins/bsfRenderBeast)
+#add_subdirectory(Plugins/bsfPhysX)
+#add_subdirectory(Plugins/bsfFBXImporter)
+#add_subdirectory(Plugins/bsfFontImporter)
+#add_subdirectory(Plugins/bsfFreeImgImporter)
+#add_subdirectory(Plugins/bsfSL)
 
 ## Tests
 if(BUILD_TESTS)
@@ -163,18 +163,18 @@ if(BUILD_TESTS)
 endif()
 
 ## Builtin resource preprocessing
-add_executable(bsfImportTool
-	Foundation/bsfEngine/Resources/BsBuiltinResourcesImporter.cpp)
-add_common_flags(bsfImportTool)
+#add_executable(bsfImportTool
+#	Foundation/bsfEngine/Resources/BsBuiltinResourcesImporter.cpp)
+#add_common_flags(bsfImportTool)
 
-target_link_libraries(bsfImportTool bsf)
+#target_link_libraries(bsfImportTool bsf)
 	
-add_engine_dependencies(bsfImportTool)
-add_importer_dependencies(bsfImportTool)
+#add_engine_dependencies(bsfImportTool)
+#add_importer_dependencies(bsfImportTool)
 
-set_property(TARGET bsfImportTool PROPERTY FOLDER Utilities)
+#set_property(TARGET bsfImportTool PROPERTY FOLDER Utilities)
 
-install(TARGETS bsfImportTool RUNTIME DESTINATION bin)	
+#install(TARGETS bsfImportTool RUNTIME DESTINATION bin)	
 
 set(BS_FTP_CREDENTIALS_FILE "${PROJECT_SOURCE_DIR}/../ftp_credentials" CACHE STRING "The location containing the FTP server credentials to use for uploading packages. The file is expected to contain three lines: URL/Username/Password, in that order.")
 mark_as_advanced(BS_FTP_CREDENTIALS_FILE)
@@ -185,13 +185,13 @@ if(${INCLUDE_ASSET_PACKAGING_SCRIPTS})
 	add_upload_assets_target(bsfDocImages "bsfDocImagesData_Master" ${BSF_SOURCE_DIR}/../Documentation DataPackageContents.txt)
 endif()
 
-set(COMPILED_ASSETS_VERSION_FILE ${BSF_SOURCE_DIR}/../Data/.reqversion)
-file (STRINGS ${COMPILED_ASSETS_VERSION_FILE} COMPILED_ASSETS_VERSION)
-check_and_update_builtin_assets(bsfCompiled ${BSF_SOURCE_DIR}/../Data Data ${COMPILED_ASSETS_VERSION} NO)
+#set(COMPILED_ASSETS_VERSION_FILE ${BSF_SOURCE_DIR}/../Data/.reqversion)
+#file (STRINGS ${COMPILED_ASSETS_VERSION_FILE} COMPILED_ASSETS_VERSION)
+#check_and_update_builtin_assets(bsfCompiled ${BSF_SOURCE_DIR}/../Data Data ${COMPILED_ASSETS_VERSION} NO)
 
-set(DOC_IMAGES_VERSION_FILE ${BSF_SOURCE_DIR}/../Documentation/.reqversion)
-file (STRINGS ${DOC_IMAGES_VERSION_FILE} DOC_IMAGES_VERSION)
-check_and_update_builtin_assets(bsfDocImages ${BSF_SOURCE_DIR}/../Documentation Documentation ${DOC_IMAGES_VERSION} NO)
+#set(DOC_IMAGES_VERSION_FILE ${BSF_SOURCE_DIR}/../Documentation/.reqversion)
+#file (STRINGS ${DOC_IMAGES_VERSION_FILE} DOC_IMAGES_VERSION)
+#check_and_update_builtin_assets(bsfDocImages ${BSF_SOURCE_DIR}/../Documentation Documentation ${DOC_IMAGES_VERSION} NO)
 
 ## Install
 install(
