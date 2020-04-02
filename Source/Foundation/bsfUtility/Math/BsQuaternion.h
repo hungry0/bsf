@@ -4,7 +4,7 @@
 
 namespace bs
 {
-    class BS_UTILITY_EXPORT BsQuaternion
+    class BS_UTILITY_EXPORT Quaternion
     {
 
     };
