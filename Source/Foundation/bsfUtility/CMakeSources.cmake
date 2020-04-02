@@ -154,7 +154,7 @@ set(BS_UTILITY_INC_ERROR
 set(BS_UTILITY_SRC_MATH
 	"bsfUtility/Math/BsAABox.cpp"
 	"bsfUtility/Math/BsDegree.cpp"
-#	"bsfUtility/Math/BsMath.cpp"
+	"bsfUtility/Math/BsMath.cpp"
 	"bsfUtility/Math/BsMatrix3.cpp"
 	"bsfUtility/Math/BsMatrix4.cpp"
 	"bsfUtility/Math/BsPlane.cpp"
@@ -201,7 +201,7 @@ set(BS_UTILITY_SRC_SERIALIZATION
 set(BS_UTILITY_INC_MATH
 	"bsfUtility/Math/BsAABox.h"
 	"bsfUtility/Math/BsDegree.h"
-#	"bsfUtility/Math/BsMath.h"
+	"bsfUtility/Math/BsMath.h"
 	"bsfUtility/Math/BsMatrix3.h"
 	"bsfUtility/Math/BsMatrix4.h"
 	"bsfUtility/Math/BsPlane.h"
