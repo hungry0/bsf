@@ -172,7 +172,7 @@ set(BS_UTILITY_SRC_MATH
 	"bsfUtility/Math/BsRect3.cpp"
 	"bsfUtility/Math/BsRect2.cpp"
 	"bsfUtility/Math/BsRect2I.cpp"
-#	"bsfUtility/Math/BsLineSegment3.cpp"
+	"bsfUtility/Math/BsLineSegment3.cpp"
 	"bsfUtility/Math/BsCapsule.cpp"
 	"bsfUtility/Math/BsLine2.cpp"
 )
@@ -218,7 +218,7 @@ set(BS_UTILITY_INC_MATH
 	"bsfUtility/Math/BsBounds.h"
 #	"bsfUtility/Math/BsConvexVolume.h"
 #	"bsfUtility/Math/BsTorus.h"
-#	"bsfUtility/Math/BsLineSegment3.h"
+	"bsfUtility/Math/BsLineSegment3.h"
 	"bsfUtility/Math/BsRect3.h"
 	"bsfUtility/Math/BsRect2.h"
 	"bsfUtility/Math/BsRect2I.h"

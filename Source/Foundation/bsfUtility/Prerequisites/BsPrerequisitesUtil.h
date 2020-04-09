@@ -1,8 +1,5 @@
 #pragma once
 
-#include <assert.h>
-#include <utility>
-
 #include "Prerequisites/BsPlatformDefines.h"
 
 // Forward declarations

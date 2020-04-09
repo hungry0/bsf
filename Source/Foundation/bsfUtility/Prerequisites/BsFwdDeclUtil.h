@@ -25,4 +25,11 @@ namespace bs
     {
         BSIdentity
     };
+
+    class Matrix4;
+    class Sphere;
+    class Plane;
+    class Ray;
+    class AABox;
+    class Vector3;
 }
