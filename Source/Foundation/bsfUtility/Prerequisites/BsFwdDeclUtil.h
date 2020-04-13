@@ -27,9 +27,13 @@ namespace bs
     };
 
     class Matrix4;
+    class Matrix3;
     class Sphere;
     class Plane;
     class Ray;
     class AABox;
     class Vector3;
+    class Vector2;
+    class Vector2I;
+    class Radian;
 }
