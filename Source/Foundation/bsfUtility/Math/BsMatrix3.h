@@ -32,7 +32,7 @@ namespace bs
               }
         {}
 
-        constexpr Matrix3(BS_INDENTITY)
+        constexpr Matrix3(BS_IDENTITY)
             :m{ {1.0f,0.0f,0.0f},
                 {0.0f,1.0f,0.0f},
                 {0.0f,0.0f,1.0f}

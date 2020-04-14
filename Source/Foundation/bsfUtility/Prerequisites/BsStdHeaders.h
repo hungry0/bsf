@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <utility>
 #include <vector>
+#include <array>
 
 
 namespace bs
