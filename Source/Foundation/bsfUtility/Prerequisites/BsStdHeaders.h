@@ -7,6 +7,7 @@
 #include <utility>
 #include <vector>
 #include <array>
+#include <functional>
 
 
 namespace bs
